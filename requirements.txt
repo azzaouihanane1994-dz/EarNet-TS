@@ -1,0 +1,13 @@
+# Local import-check environment; select a matching PyTorch CUDA wheel for the target machine.
+torch==2.12.1
+torchvision==0.27.1
+numpy==1.26.4
+opencv-python==4.11.0.86
+Pillow==12.2.0
+matplotlib==3.11.0
+pandas==2.3.3
+scikit-learn==1.9.0
+seaborn==0.13.2
+albumentations==2.0.8
+ultralytics==8.3.0
+packaging==26.2

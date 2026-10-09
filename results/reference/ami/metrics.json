@@ -1,0 +1,97 @@
+{
+  "collection": "ami",
+  "status": "recomputed_from_saved_embeddings",
+  "scope": "historical known-identity protocol; not a new independent training/test run",
+  "source_hashes": {
+    "train_embeddings": "a91fde1605898e80373e2741706a06cf14f36d433168679e7357d5915f342b27",
+    "train_labels": "58c2d6c2d6c3f76d9a089d2e86fe45435e3c11bd208f0b0ff817a91c77779215",
+    "test_embeddings": "5c29563fba3af9c1d6bfcf53584a3839bc3686f6ddf3cfc5bfca75f1384e58b3",
+    "test_labels": "d958d84a704990256916f94b1637b872e096734e850dfaf6ff91b4d855d8e291"
+  },
+  "verification": {
+    "auc": 0.9985666666666666,
+    "eer_percent": 2.868686868686869,
+    "eer_convention": "linear interpolation of empirical FAR/FRR crossing",
+    "genuine_pairs": 100,
+    "impostor_pairs": 19800,
+    "test_roc_operating_points": {
+      "0.1": {
+        "far_fraction": 0.03676767676767677,
+        "tar_percent": 100.0,
+        "threshold": 0.20411764314351882
+      },
+      "0.05": {
+        "far_fraction": 0.03676767676767677,
+        "tar_percent": 100.0,
+        "threshold": 0.20411764314351882
+      },
+      "0.01": {
+        "far_fraction": 0.007676767676767677,
+        "tar_percent": 96.0,
+        "threshold": 0.2888674819500124
+      },
+      "0.001": {
+        "far_fraction": 0.0009595959595959596,
+        "tar_percent": 89.0,
+        "threshold": 0.38317613390038036
+      }
+    },
+    "identity_bootstrap": {
+      "method": "identity cluster resampling; within-identity pair weight c_i, cross-identity pair weight c_i*c_j",
+      "repetitions": 200,
+      "valid_draws": 200,
+      "interval95": {
+        "auc": [
+          0.9967709637296251,
+          0.999629005253594
+        ],
+        "eer_percent": [
+          0.9989105973813429,
+          3.536122321101007
+        ],
+        "tar_at_0.1": [
+          100.0,
+          100.0
+        ],
+        "tar_at_0.05": [
+          100.0,
+          100.0
+        ],
+        "tar_at_0.01": [
+          89.975,
+          99.025
+        ],
+        "tar_at_0.001": [
+          80.0,
+          95.0
+        ]
+      },
+      "scope": "conditional on fixed trained embeddings; not training/split uncertainty"
+    }
+  },
+  "identification": {
+    "gallery_images": 100,
+    "probe_images": 100,
+    "enrolled_identities": 100,
+    "ranks_percent": {
+      "1": 97.0,
+      "5": 100.0,
+      "10": 100.0
+    },
+    "rank1_identity_bootstrap_95_percent": [
+      93.0,
+      100.0
+    ]
+  },
+  "centroid_matching": {
+    "known_queries": 198,
+    "unknown_queries": 2,
+    "centroids": 99,
+    "topk_percent": {
+      "1": 97.47474747474747,
+      "5": 99.4949494949495,
+      "10": 100.0
+    }
+  },
+  "warning": "Historical validation/test overlap remains; test/train labels differ in coverage."
+}

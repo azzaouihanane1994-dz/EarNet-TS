@@ -1,0 +1,115 @@
+{
+  "pretrained_ckpt": "./UERC-2019_model/best.ckpt",
+  "dataset_dir": "../datasets/UERC-2019/train-test",
+  "work_dir": "./UERC-2019_model/results/AWE_100epochs_novel_model_v3",
+  "seed": 42,
+  "input_size": 256,
+  "embedding_dim": 512,
+  "arcface_s": 64.0,
+  "arcface_m": 0.35,
+  "backbone_type": "two_stream",
+  "use_attention": true,
+  "attention_type": "cbam",
+  "eca_k": 3,
+  "edh": {
+    "enabled": true,
+    "l1_weight": 0.2,
+    "eik_weight": 0.1,
+    "downsample": 4
+  },
+  "onsa": {
+    "enabled": true,
+    "weight": 0.05,
+    "adv_weight": 0.05,
+    "grl": 1.0
+  },
+  "epochs": 100,
+  "batch_size": 16,
+  "lr": 0.0003,
+  "weight_decay": 0.0001,
+  "num_workers": 4,
+  "device": "cuda",
+  "fp16": true,
+  "arcface_schedule": {
+    "m": {
+      "start": 0.0,
+      "end": 0.35,
+      "start_epoch": 1,
+      "end_epoch": 10,
+      "mode": "cos"
+    },
+    "s": {
+      "start": 16.0,
+      "end": 64.0,
+      "start_epoch": 1,
+      "end_epoch": 10,
+      "mode": "linear"
+    }
+  },
+  "train_frac": 0.7,
+  "val_frac": 0.1,
+  "max_images_per_person": 100,
+  "min_images_person": 5,
+  "limit_person": 100,
+  "use_yolo_crop": true,
+  "yolo_conf": 0.25,
+  "yolo_iou": 0.5,
+  "yolo_pad": 0.02,
+  "yolo_square": false,
+  "force_recache": true,
+  "ear_detector_weights": "./UERC-2019_model/yolov8s_ear_detection.pt",
+  "crop_cache_dir": "./UERC-2019_model/cache/",
+  "crop_square_pad": 0.05,
+  "aug": {
+    "hflip": true,
+    "vflip": false,
+    "rotate_deg": 25,
+    "brightness": 0.15,
+    "contrast": 0.15,
+    "blur_prob": 0.15,
+    "jpeg_prob": 0.15,
+    "perspective_prob": 0.15
+  },
+  "debug_samples": {
+    "enabled": true,
+    "max_save": 48,
+    "out_dir": "samples",
+    "save_every_n_batches": 1
+  },
+  "save_every": 1,
+  "topk": [
+    1,
+    5,
+    10
+  ],
+  "do_verification": true,
+  "verification": {
+    "max_genuine_pairs": 100000,
+    "max_impostor_pairs": 100000,
+    "far_targets": [
+      0.1,
+      0.05,
+      0.01,
+      0.001
+    ],
+    "save_test_test_similarity": true,
+    "save_test_centroid_similarity": true
+  },
+  "gallery_probe": {
+    "enabled": true,
+    "gallery_per_class": 1,
+    "selection": "first",
+    "seed": 42
+  },
+  "open_set": {
+    "enabled": true,
+    "temperature_calibration": true,
+    "val_threshold_percentile": 10,
+    "cosine_threshold_percentile": 5
+  },
+  "viz": {
+    "enabled": true,
+    "max_batches": 2,
+    "out_dir": "viz"
+  }
+}

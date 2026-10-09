@@ -1,0 +1,12 @@
+{
+  "protocol": "author-supplied fixed AWE split",
+  "train_images": 600,
+  "test_images": 400,
+  "seed_changes_membership": false,
+  "validation_role": "Training-set monitor only; no independent validation claim.",
+  "checkpoint_selection": "Final predetermined epoch; test images never select checkpoint or settings.",
+  "file_sha256": {
+    "train": "2810bdcce88f187ac8e0aab5936d7e2fcaf50b25a411d86043346b28e7300970",
+    "test": "7ccf5ae1cb5e6f48c593fa31dd0da49018e7a0a7f3ab104de64e82ba6934be12"
+  }
+}

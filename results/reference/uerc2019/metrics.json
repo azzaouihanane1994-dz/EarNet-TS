@@ -1,0 +1,96 @@
+{
+  "collection": "uerc2019",
+  "status": "recomputed_from_saved_embeddings",
+  "scope": "historical known-identity protocol; not a new independent training/test run",
+  "source_hashes": {
+    "train_embeddings": "50e8c4b3db1d9a4752e6c9d11c060b7bf48e1f74274d6c9aa526f3c4ea520d0c",
+    "train_labels": "61f791e7fd71d55069c135e58441d12b6987a0f83dd70d31988b5fcf201e67e4",
+    "test_embeddings": "f0990505eebf0b9993c7204700ecb88c318bb683f649e946bb29c610e631176f",
+    "test_labels": "cb12a5caf5725a99e54ae29b9067382ddea256e1cb3861ee5ae0a633cac2b895"
+  },
+  "verification": {
+    "auc": 0.9443602424242423,
+    "eer_percent": 12.424242424242426,
+    "eer_convention": "linear interpolation of empirical FAR/FRR crossing",
+    "genuine_pairs": 330,
+    "impostor_pairs": 100000,
+    "test_roc_operating_points": {
+      "0.1": {
+        "far_fraction": 0.09902,
+        "tar_percent": 85.75757575757575,
+        "threshold": 0.1292284721136326
+      },
+      "0.05": {
+        "far_fraction": 0.04982,
+        "tar_percent": 78.78787878787878,
+        "threshold": 0.16859491682293434
+      },
+      "0.01": {
+        "far_fraction": 0.01,
+        "tar_percent": 63.33333333333333,
+        "threshold": 0.24782539071317955
+      },
+      "0.001": {
+        "far_fraction": 0.00091,
+        "tar_percent": 42.72727272727273,
+        "threshold": 0.3540371108608933
+      }
+    },
+    "identity_bootstrap": {
+      "method": "identity cluster resampling; within-identity pair weight c_i, cross-identity pair weight c_i*c_j",
+      "repetitions": 200,
+      "valid_draws": 200,
+      "interval95": {
+        "auc": [
+          0.9288444246473954,
+          0.9580110548911686
+        ],
+        "eer_percent": [
+          9.94417657326349,
+          14.512284608148596
+        ],
+        "tar_at_0.1": [
+          81.51515151515152,
+          90.30303030303031
+        ],
+        "tar_at_0.05": [
+          74.22727272727273,
+          83.33333333333334
+        ],
+        "tar_at_0.01": [
+          57.878787878787875,
+          67.58333333333334
+        ],
+        "tar_at_0.001": [
+          37.27272727272727,
+          47.878787878787875
+        ]
+      },
+      "scope": "conditional on fixed trained embeddings; not training/split uncertainty"
+    }
+  },
+  "identification": {
+    "gallery_images": 330,
+    "probe_images": 330,
+    "enrolled_identities": 330,
+    "ranks_percent": {
+      "1": 48.18181818181818,
+      "5": 65.45454545454545,
+      "10": 72.42424242424242
+    },
+    "rank1_identity_bootstrap_95_percent": [
+      42.72727272727273,
+      53.63636363636363
+    ]
+  },
+  "centroid_matching": {
+    "known_queries": 660,
+    "unknown_queries": 0,
+    "centroids": 330,
+    "topk_percent": {
+      "1": 77.12121212121212,
+      "5": 86.81818181818181,
+      "10": 90.75757575757576
+    }
+  }
+}

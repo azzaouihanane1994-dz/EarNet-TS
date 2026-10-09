@@ -1,0 +1,17 @@
+[
+  {
+    "dataset": "ami",
+    "path": "models/ami/novel_model_v3.py",
+    "sha256": "030ce94c8844600073c90cf84f0e0dac0a92f89c1c242dd522c627b1328693b9"
+  },
+  {
+    "dataset": "earvn10",
+    "path": "models/earvn10/novel_model_v3.py",
+    "sha256": "22ef9e0e29820ffe6a74b053e27a25dc62a8f9365fc92f7141adeaaa23641371"
+  },
+  {
+    "dataset": "uerc2019",
+    "path": "models/uerc2019/novel_model_v3.py",
+    "sha256": "120c5d7d8efa18887d91c6d3ef44b0932e394ae1cd9f6234031a97191da7559d"
+  }
+]

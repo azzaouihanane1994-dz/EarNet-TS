@@ -1,0 +1,22 @@
+data/**
+!data/README.md
+!data/manifest.json
+!data/awe/
+!data/awe/train.txt
+!data/awe/test.txt
+__pycache__/
+*.pyc
+.venv/
+*.pem
+*.key
+*.ppk
+# Pretrained models and checkpoints
+weights/
+*.pth
+*.pt
+*.ckpt
+
+# Python temporary files
+__pycache__/
+*.pyc
+.venv/

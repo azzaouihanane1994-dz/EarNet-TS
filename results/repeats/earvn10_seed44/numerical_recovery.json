@@ -1,0 +1,8 @@
+{
+  "angular_head_precision": "float32",
+  "gradient_scaling": "disabled with original fp16 flag false",
+  "training_precision": "float32; original fp16 flag disabled at runtime",
+  "angular_sqrt_argument_minimum": 1e-07,
+  "reason": "Previous original-code mixed-precision attempt produced NaN loss; preserved in failed-attempt archive.",
+  "scope": "Numerical safeguard changes the angular square-root formula at its singular boundary; architecture, optimizer, seed, budget and original source bytes unchanged. Not a strictly seed-only repeat."
+}

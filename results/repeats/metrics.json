@@ -1,0 +1,102 @@
+[
+  {
+    "dataset": "ami",
+    "seed": 43,
+    "classifier_accuracy_percent": 98.5,
+    "completed": true,
+    "gallery_rank1_percent": 93.0,
+    "distinct_pair_auc": 0.9941373737373737,
+    "distinct_pair_eer_percent": 3.0000000000000027,
+    "artifact_directory": "results/repeats/ami_seed43"
+  },
+  {
+    "dataset": "ami",
+    "seed": 44,
+    "classifier_accuracy_percent": 99.0,
+    "completed": true,
+    "gallery_rank1_percent": 93.0,
+    "distinct_pair_auc": 0.9981484848484848,
+    "distinct_pair_eer_percent": 2.0000000000000018,
+    "artifact_directory": "results/repeats/ami_seed44"
+  },
+  {
+    "dataset": "awe",
+    "seed": 43,
+    "variant": null,
+    "numerical_recovery": false,
+    "gradient_clip_norm": null,
+    "fixed_awe_split": true,
+    "imagenet_initialization_only": false,
+    "transfer_checkpoint_membership_verified": false,
+    "classifier_accuracy_percent": 85.0,
+    "completed": true,
+    "gallery_rank1_percent": 56.67,
+    "distinct_pair_auc": 0.9468454966329968,
+    "distinct_pair_eer_percent": 11.503787878787879,
+    "artifact_directory": "results/repeats/awe_fixed_seed43"
+  },
+  {
+    "dataset": "awe",
+    "seed": 44,
+    "variant": null,
+    "numerical_recovery": false,
+    "gradient_clip_norm": null,
+    "fixed_awe_split": true,
+    "imagenet_initialization_only": false,
+    "transfer_checkpoint_membership_verified": false,
+    "classifier_accuracy_percent": 87.25,
+    "completed": true,
+    "gallery_rank1_percent": 61.67,
+    "distinct_pair_auc": 0.9467423821548822,
+    "distinct_pair_eer_percent": 12.170454545454545,
+    "artifact_directory": "results/repeats/awe_fixed_seed44"
+  },
+  {
+    "dataset": "earvn10",
+    "seed": 43,
+    "classifier_accuracy_percent": 92.01,
+    "completed": true,
+    "gallery_rank1_percent": 83.02,
+    "distinct_pair_auc": 0.9804514118,
+    "distinct_pair_eer_percent": 5.694999999999995,
+    "artifact_directory": "results/repeats/earvn10_seed43"
+  },
+  {
+    "dataset": "earvn10",
+    "seed": 44,
+    "variant": null,
+    "numerical_recovery": true,
+    "gradient_clip_norm": 5.0,
+    "training_epochs_completed": 95,
+    "selected_checkpoint_epoch": 92,
+    "selected_checkpoint_validation_accuracy": 92.32690935046396,
+    "classifier_accuracy_percent": 92.46,
+    "completed": true,
+    "gallery_rank1_percent": 85.61,
+    "distinct_pair_auc": 0.9795950232,
+    "distinct_pair_eer_percent": 5.520999999999998,
+    "artifact_directory": "results/repeats/earvn10_seed44"
+  },
+  {
+    "dataset": "uerc2019",
+    "seed": 43,
+    "classifier_accuracy_percent": 73.64,
+    "completed": true,
+    "gallery_rank1_percent": 46.97,
+    "distinct_pair_auc": 0.9404494545454546,
+    "distinct_pair_eer_percent": 13.030303030303026,
+    "artifact_directory": "results/repeats/uerc2019_seed43"
+  },
+  {
+    "dataset": "uerc2019",
+    "seed": 44,
+    "variant": null,
+    "numerical_recovery": false,
+    "classifier_accuracy_percent": 72.88,
+    "completed": true,
+    "gallery_rank1_percent": 48.18,
+    "distinct_pair_auc": 0.9378046666666667,
+    "distinct_pair_eer_percent": 13.939393939393941,
+    "artifact_directory": "results/repeats/uerc2019_seed44"
+  }
+]

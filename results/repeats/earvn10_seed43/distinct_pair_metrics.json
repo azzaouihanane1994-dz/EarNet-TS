@@ -1,0 +1,64 @@
+{
+  "verification": {
+    "auc": 0.9804514118,
+    "eer_percent": 5.694999999999995,
+    "eer_convention": "linear interpolation of empirical FAR/FRR crossing",
+    "genuine_pairs": 100000,
+    "impostor_pairs": 100000,
+    "test_roc_operating_points": {
+      "0.1": {
+        "far_fraction": 0.09994,
+        "tar_percent": 95.491,
+        "threshold": 0.12483390024261341
+      },
+      "0.05": {
+        "far_fraction": 0.05,
+        "tar_percent": 94.023,
+        "threshold": 0.1635574177436372
+      },
+      "0.01": {
+        "far_fraction": 0.01,
+        "tar_percent": 89.364,
+        "threshold": 0.25225082699011836
+      },
+      "0.001": {
+        "far_fraction": 0.001,
+        "tar_percent": 79.583,
+        "threshold": 0.38670160557473315
+      }
+    },
+    "identity_bootstrap": {
+      "method": "identity cluster resampling; within-identity pair weight c_i, cross-identity pair weight c_i*c_j",
+      "repetitions": 200,
+      "valid_draws": 200,
+      "interval95": {
+        "auc": [
+          0.9775718202156444,
+          0.9842366339227802
+        ],
+        "eer_percent": [
+          5.007493393045384,
+          6.327342547762266
+        ],
+        "tar_at_0.1": [
+          94.78184904867297,
+          96.22786692548183
+        ],
+        "tar_at_0.05": [
+          93.13364376747609,
+          94.99231520488043
+        ],
+        "tar_at_0.01": [
+          87.83359302993541,
+          90.74840875959765
+        ],
+        "tar_at_0.001": [
+          76.23456878868268,
+          82.17063294186643
+        ]
+      },
+      "scope": "conditional on fixed trained embeddings; not training/split uncertainty"
+    }
+  },
+  "scope": "Recomputed saved embeddings; distinct pairs. No retraining or changes to original exported logs."
+}
