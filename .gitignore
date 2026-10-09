@@ -1,22 +1,31 @@
-data/**
-!data/README.md
-!data/manifest.json
-!data/awe/
-!data/awe/train.txt
-!data/awe/test.txt
+# Dataset images; metadata and official AWE membership remain versioned.
+/data/**
+!/data/README.md
+!/data/manifest.json
+!/data/awe/
+!/data/awe/train.txt
+!/data/awe/test.txt
+
+# Large model binaries; weight documentation and hashes remain versioned.
+/weights/**
+!/weights/README.md
+!/weights/manifest.json
+*.ckpt
+*.pt
+*.pth
+*.onnx
+
+# Generated execution directories and interpreter caches.
+/runs/
 __pycache__/
-*.pyc
+*.py[cod]
 .venv/
+.venv-cpu/
+
+# Credentials.
 *.pem
 *.key
 *.ppk
-# Pretrained models and checkpoints
-weights/
-*.pth
-*.pt
-*.ckpt
 
-# Python temporary files
-__pycache__/
-*.pyc
-.venv/
+# Results (JSON, CSV, plots and compact NumPy arrays) are versioned.
+# Files larger than 50 MiB are listed individually below.

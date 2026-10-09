@@ -1,0 +1,103 @@
+{
+  "protocol": "custom_subject_disjoint_70_10_20",
+  "source": "Author-supplied five-split aggregate measurements from a separate workstation, matching the manuscript.",
+  "aggregation": "Rank-1 mean and sample standard deviation across five splits; no per-split values or paired significance inferred.",
+  "results": [
+    {
+      "dataset": "AMI",
+      "configuration": "Proposed configuration",
+      "splits": 5,
+      "mean_rank1_percent": 90.83,
+      "sample_sd_rank1_percentage_points": 1.82,
+      "eer_percent": 5.71
+    },
+    {
+      "dataset": "AMI",
+      "configuration": "RGB baseline",
+      "splits": 5,
+      "mean_rank1_percent": 87.5,
+      "sample_sd_rank1_percentage_points": 2.15,
+      "eer_percent": 7.14
+    },
+    {
+      "dataset": "AMI",
+      "configuration": "Capacity-matched single stream",
+      "splits": 5,
+      "mean_rank1_percent": 89.17,
+      "sample_sd_rank1_percentage_points": 1.96,
+      "eer_percent": 6.43
+    },
+    {
+      "dataset": "AWE",
+      "configuration": "Proposed configuration",
+      "splits": 5,
+      "mean_rank1_percent": 41.11,
+      "sample_sd_rank1_percentage_points": 2.75,
+      "eer_percent": 21.56
+    },
+    {
+      "dataset": "AWE",
+      "configuration": "RGB baseline",
+      "splits": 5,
+      "mean_rank1_percent": 36.11,
+      "sample_sd_rank1_percentage_points": 3.12,
+      "eer_percent": 24.08
+    },
+    {
+      "dataset": "AWE",
+      "configuration": "Capacity-matched single stream",
+      "splits": 5,
+      "mean_rank1_percent": 38.33,
+      "sample_sd_rank1_percentage_points": 2.94,
+      "eer_percent": 23.17
+    },
+    {
+      "dataset": "EarVN1.0",
+      "configuration": "Proposed configuration",
+      "splits": 5,
+      "mean_rank1_percent": 49.49,
+      "sample_sd_rank1_percentage_points": 1.43,
+      "eer_percent": 16.75
+    },
+    {
+      "dataset": "EarVN1.0",
+      "configuration": "RGB baseline",
+      "splits": 5,
+      "mean_rank1_percent": 45.69,
+      "sample_sd_rank1_percentage_points": 1.87,
+      "eer_percent": 19.34
+    },
+    {
+      "dataset": "EarVN1.0",
+      "configuration": "Capacity-matched single stream",
+      "splits": 5,
+      "mean_rank1_percent": 47.42,
+      "sample_sd_rank1_percentage_points": 1.65,
+      "eer_percent": 18.32
+    },
+    {
+      "dataset": "UERC-2019",
+      "configuration": "Proposed configuration",
+      "splits": 5,
+      "mean_rank1_percent": 30.85,
+      "sample_sd_rank1_percentage_points": 2.36,
+      "eer_percent": 22.49
+    },
+    {
+      "dataset": "UERC-2019",
+      "configuration": "RGB baseline",
+      "splits": 5,
+      "mean_rank1_percent": 23.05,
+      "sample_sd_rank1_percentage_points": 2.71,
+      "eer_percent": 25.51
+    },
+    {
+      "dataset": "UERC-2019",
+      "configuration": "Capacity-matched single stream",
+      "splits": 5,
+      "mean_rank1_percent": 26.39,
+      "sample_sd_rank1_percentage_points": 2.53,
+      "eer_percent": 24.53
+    }
+  ]
+}

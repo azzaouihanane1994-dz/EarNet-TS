@@ -1,0 +1,41 @@
+{
+  "protocol": "custom_subject_disjoint_70_10_20",
+  "collections": [
+    "ami",
+    "awe",
+    "uerc2019",
+    "earvn10"
+  ],
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "epochs": 70,
+  "early_stopping_patience": 12,
+  "minimum_epochs": 20,
+  "input_size": 256,
+  "batch_size": 8,
+  "identities_per_batch": 4,
+  "gradient_accumulation": 2,
+  "num_workers": 2,
+  "lr": 0.0003,
+  "weight_decay": 0.0001,
+  "device": "auto",
+  "mixed_precision": true,
+  "max_verification_pairs": 100000,
+  "test_thresholds": "calibrate_on_validation_without_test_adjustment",
+  "initialization": "ImageNet ResNet-50; scratch ViT reference explicitly labeled",
+  "profile_warmup": 10,
+  "profile_repetitions": 50,
+  "robustness_severities": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "single_stage3_blocks": 16,
+  "run_analysis_after_training": false
+}

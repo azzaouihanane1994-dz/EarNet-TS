@@ -2,7 +2,7 @@
 
 Full-model implementations and experimental evidence for **EarNet-TS: A Two-Stream Contour-Enhanced Attention Network with ECA and Scheduled ArcFace for Ear Biometrics**.
 
-EarNet-TS combines RGB appearance and contour information for ear recognition. The model learns 512-dimensional embeddings and uses scheduled ArcFace during training. Evaluation covers AMI, AWE, EarVN1.0 and UERC-2019.
+EarNet-TS combines RGB appearance and contour information for ear recognition. The model learns 512-dimensional embeddings and uses scheduled ArcFace during training. Evaluation covers AMI, AWE, EarVN1.0 and UERC-2019 under identity-sharing and custom subject-disjoint protocols.
 
 ## Model architecture
 
@@ -34,6 +34,24 @@ python scripts/run_multiple.py --datasets ami awe earvn10 uerc2019 --seeds 43 44
 ```
 
 Run outputs are saved under `runs/` in a new, empty directory. For seeds 43/44, the launcher replays the recorded image memberships. `--new-split` invokes the original seed-dependent split generator for AMI, EarVN1.0 and UERC-2019. AWE always preserves its supplied 600/400 benchmark lists. Use `--seeds` to select additional random seeds.
+
+## Evaluation protocols
+
+**Identity-sharing:** `scripts/run_v3.py` runs the original dataset-specific v3 models. `scripts/run_multiple.py` executes repeated seeds. AWE retains its official 600/400 training/test membership. Reference and repeated measurements are recorded in `results/reference/` and `results/repeats/`.
+
+**Subject-disjoint:** `scripts/run_subject_disjoint.py` uses the separate training pipeline in `src/earnet_ts/experiments/`. Training, validation and test identities are separated in custom 70/10/20 partitions. Unseen validation identities are enrolled in a gallery for checkpoint selection; test matching uses a separate unseen-identity gallery. Initialization uses ImageNet ResNet-50 weights. Recorded local memberships for seeds 42--46 are in `protocols/subject_disjoint/`.
+
+Inspect the configurations, then execute explicitly:
+
+```bash
+python scripts/run_subject_disjoint.py --datasets ami awe earvn10 uerc2019 --seeds 42 43 44 45 46
+python scripts/run_subject_disjoint.py --datasets ami --seeds 42 --check
+python scripts/run_subject_disjoint.py --datasets ami awe earvn10 uerc2019 --seeds 42 43 44 45 46 --execute
+```
+
+Use `--variants earnet rgb single_fusion_matched` to evaluate the full model and the two representative baselines. Outputs are written under `runs/subject_disjoint/`; `--output` selects another directory under `runs/`. Device selection is automatic, with explicit `--device cpu` or `--device cuda` options.
+
+The five-split article summaries are recorded in `results/subject_disjoint/metrics.json`. These author-supplied aggregate measurements were obtained on a separate workstation; the recorded local manifests and new execution outputs are identified separately. See `results/subject_disjoint/README.md` for measurement scope and input preparation. AWE subject-disjoint evaluation is distinct from its fixed benchmark image split.
 
 ## Full-model reference results
 

@@ -30,13 +30,17 @@ For example, index `1` corresponds to `data/awe/001/01.png`. All 600 training im
 
 ## Recorded partitions and validation
 
-AMI, EarVN1.0 and UERC-2019 seed 43/44 runs use the image memberships recorded in `results/repeats/<run>/splits.json`. The `--new-split` option generates a seed-dependent partition for those datasets. AWE always uses its fixed benchmark lists.
+AMI, EarVN1.0 and UERC-2019 seed 43/44 runs use the image memberships recorded in `results/repeats/<run>/splits.json`. The `--new-split` option generates a seed-dependent partition for those datasets. The identity-sharing AWE launcher always uses its fixed benchmark lists.
 
 From the repository root, check the input files and required weights with:
 
 ```bash
 python scripts/check_release.py --local-data
 ```
+
+## Subject-disjoint inputs
+
+The custom subject-disjoint protocol uses manifests in `protocols/subject_disjoint/`. Its AWE manifests reference cached AWE-member crops under `data/uerc2019/PartA/`, preserving the inputs used by the local subject-disjoint pipeline. These prepared images differ from `data/awe/` inputs used by the official fixed-split launcher. Preserve the paths and preparation in each protocol manifest.
 
 ## Dataset terms
 

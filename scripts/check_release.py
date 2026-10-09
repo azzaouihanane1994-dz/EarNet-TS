@@ -65,6 +65,26 @@ def main():
     assert len(set(test)) == len(test) == 400
     assert not set(train) & set(test)
     assert set(train) | set(test) == set(range(1, 1001))
+    for path in (ROOT / 'protocols/subject_disjoint').glob('*_seed*.json'):
+        protocol = json.loads(path.read_text(encoding='utf-8'))
+        assert protocol['subject_disjoint'] and protocol['independent_test'], path
+        ids = {s: {pid for _, pid in items} for s, items in protocol['items'].items()}
+        images = {s: {image for image, _ in items} for s, items in protocol['items'].items()}
+        for a, b in [('train', 'val'), ('train', 'test'), ('val', 'test')]:
+            assert not ids[a] & ids[b] and not images[a] & images[b], path
+        for items in protocol['items'].values():
+            for image, _ in items:
+                path = Path(image)
+                assert not path.is_absolute() and path.parts[0] == 'data' and '..' not in path.parts, image
+                if args.local_data:
+                    assert (ROOT / image).is_file(), image
+    aggregates = read('results/subject_disjoint/metrics.json')['results']
+    assert len(aggregates) == 12
+    proposed = {row['dataset']: (row['mean_rank1_percent'], row['sample_sd_rank1_percentage_points'], row['eer_percent'])
+                for row in aggregates if row['configuration'] == 'Proposed configuration'}
+    assert proposed == {'AMI': (90.83, 1.82, 5.71), 'AWE': (41.11, 2.75, 21.56),
+                        'EarVN1.0': (49.49, 1.43, 16.75), 'UERC-2019': (30.85, 2.36, 22.49)}
+    assert all(row['splits'] == 5 for row in aggregates)
     if args.hashes:
         for row in read('provenance/artifacts.json'):
             assert digest(ROOT / row['path']) == row['sha256'], row['path']
@@ -91,7 +111,7 @@ def main():
                 eer = far[lower] + weight * (far[upper] - far[lower])
             assert round(auc, 6) == REFERENCE[ds][1], ds
             assert round(100 * eer, 3) == REFERENCE[ds][2], ds
-    print('Release checks passed: 3 original sources, 4 reference summaries, 8 repetitions, official AWE lists.')
+    print('Release checks passed: original sources, reference/repeated results, official AWE lists, subject-disjoint splits and article aggregates.')
 
 if __name__ == '__main__':
     main()
